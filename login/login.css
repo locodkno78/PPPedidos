@@ -38,6 +38,8 @@ form {
     flex-direction: column;
     justify-content: center;
     /* Alinea el contenido verticalmente */
+    width: 100%;
+    max-width: 500px;
 }
 
 h2 {

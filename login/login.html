@@ -11,6 +11,7 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script type="module" src="./login.js"></script>
     <link rel="stylesheet" href="./login.css">
     <title>Document</title>
 </head>
@@ -23,8 +24,9 @@
             </div>
         </nav>
     </header>
+    <!--email: dicolantonio@gmail.com password: 123456-->
     <div class="container d-flex justify-content-center align-items-center">
-        <form style="width: 100%; max-width: 500px;">
+        <form id="login-form">
             <h2>INICIE SESION</h2>
             <div class="mb-3">
                 <label for="email" class="form-label">Correo Electrónico</label>
@@ -32,13 +34,15 @@
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="password" placeholder="Introduce tu contraseña" required>
+                <input type="password" class="form-control" id="password" placeholder="Introduce tu contraseña"
+                    required>
             </div>
             <div class="d-grid">
                 <button type="submit" class="btn btn-primary">Ingresar</button>
             </div>
         </form>
     </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
-import { obtenerPedidos, actualizarEstadoPedido, deletePedido } from "./firebase.js";
-
+import { obtenerPedidos, actualizarEstadoPedido, deletePedido, auth } from "./firebase.js";
+import {signOut} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
 const tbody = document.getElementById('tbody');
 
 function updateTable(querySnapshot) {
@@ -128,3 +128,19 @@ const cargarPedidosEnTabla = async () => {
 };
 // Llamar a la función para cargar los pedidos al cargar la página
 cargarPedidosEnTabla();
+
+const logout = document.querySelector("#logout");
+
+logout.addEventListener("click", async (e) => {
+  e.preventDefault();
+  try {
+    // Cerrar sesión con Firebase
+    await signOut(auth);
+    console.log('Usuario ha cerrado sesión');
+    
+    // Redirigir al login
+    window.location.href = "./login/login.html";
+  } catch (error) {
+    console.log('Error al cerrar sesión:', error);
+  }
+});
