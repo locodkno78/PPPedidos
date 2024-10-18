@@ -26,7 +26,7 @@ function updateTable(querySnapshot) {
             
 
             // Convertir el objeto de productos a una cadena legible
-            const productosString = pedido.productos.map(producto => `PRODUCTO: ${producto.nombre} <br> CANTIDAD: ${producto.cantidad}<br> TALLE: ${producto.talle} <br> PRECIO: $${producto.precio} <br> SUBTOTAL: $${producto.subtotal}<br>`).join('<br>');
+            const productosString = pedido.productos.map(producto => `PRODUCTO: ${producto.nombre} <br> CANTIDAD: ${producto.cantidad}<br> PRECIO: $${producto.precio} <br> SUBTOTAL: $${producto.subtotal}<br>`).join('<br>');
 
             html += `
                 <tr>
