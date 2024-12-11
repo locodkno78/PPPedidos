@@ -8,51 +8,163 @@
 }
 
 body {
-    font-family: "Comfortaa", cursive;    
+    font-family: "Comfortaa", cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Header */
-header {    
-    padding: 10px 0;
-    background-color: #001233;
+.container {
+    align-items: center;
+    margin: 0 auto; /* Centrar contenido */
+    max-width: 90%; /* Limitar el ancho en pantallas grandes */
+    padding: 10px;
 }
+
+.navbar {
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    background-color: blue;
+    padding: 0 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+
 
 /* Tabla */
 .header {
     margin-top: 5%;
     padding: 10px 0;
-    display: flex;    
+    display: flex;
+    justify-content: center; /* Centrar texto del header */
     text-align: center;
 }
 
 /* Estilos generales para hacer que la tabla sea responsive */
 table {
-    margin-top: 5%;
-    margin-left: 5%;
-    max-width: 90%;  
-}
-.table-responsive {
-    overflow-x: auto;
+    margin: 5% auto; /* Centrar tabla */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    border-collapse: collapse; /* Quitar separación entre celdas */
 }
 
-thead{
+.table-responsive {
+    overflow-x: auto;
+    padding: 10px; /* Espacio alrededor de la tabla para scroll */
+}
+
+thead {
     text-align: center;
     background-color: blue;
     color: white;
-    font-style: italic;    
-    font-size: 25px;     
+    font-style: italic;
+    font-size: 18px; /* Reducir tamaño en pantallas pequeñas */
 }
 
-tbody{
+tbody {
     text-align: center;
-    color:black;
-    font-style:initial;    
-    font-size: 25px;
+    color: black;
+    font-style: normal;
+    font-size: 16px; /* Reducir tamaño en pantallas pequeñas */
 }
 
-td.pedido{
-    font-size: 30px;
-    padding-bottom: 5%;            
+td.pedido {
+    font-size: 18px;
+    padding-bottom: 10px;
 }
+
+/* Estilo para las celdas de tabla */
+td, th {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Botones */
+button {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.btn-warning {
+    background-color: var(--yellow);
+    color: var(--dark);
+}
+
+button.btn-danger {
+    background-color: red;
+    color: var(--white);
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+
+    .navbar {
+        font-size: 14px;
+    }    
+
+    thead {
+        font-size: 14px; /* Reducir tamaño */
+    }
+
+    tbody {
+        font-size: 14px;
+    }
+
+    td.pedido {
+        font-size: 16px;
+    }
+
+    .container {
+        margin: 0 5%; /* Ajustar márgenes en pantallas pequeñas */
+    }
+
+    table {
+        font-size: 12px; /* Reducir fuente de la tabla */
+    }
+}
+
+@media (max-width: 480px) {
+
+    .navbar {
+        font-size: 12px;
+    }    
+
+    thead {
+        font-size: 12px;
+    }
+
+    tbody {
+        font-size: 12px;
+    }
+
+    td, th {
+        padding: 5px;
+    }
+
+    td.pedido {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 5px;
+    }
+}
+
 
 
